@@ -1,5 +1,17 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
 
-  <p>{{foo}}</p>
+    </div>
+    <div class="col-md-9">
+      {{# each posts}}
 
-<h1>{{toro}}</h1>
-<p>Welcome to {{title}}</p>
+        {{# each this}}
+
+          <a href="post/{{this._id}}">{{this.title}}</a>
+          <br>
+        {{/each}}
+      {{/each}}
+    </div>
+  </div>
+</div>

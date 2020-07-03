@@ -6,20 +6,14 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var mongoose = require('mongoose');
-var exphbs  = require('express-handlebars');
-
-
-
-var app = express();
-// mongoDB config
-var mongoDB = ' mongodb://fpuj:f2367564@codtalk-shard-00-00.fvhwn.mongodb.net:27017,codtalk-shard-00-01.fvhwn.mongodb.net:27017,codtalk-shard-00-02.fvhwn.mongodb.net:27017/codTalk?ssl=true&replicaSet=atlas-12uwqv-shard-0&authSource=admin&retryWrites=true&w=majority';
-mongoose.connect (mongoDB, { useNewUrlParser: true }, function(err) {
-  if (err) {
-    console.log("Error when connection to DB")
-  }
-  console.log("db working perfect")
-});
 mongoose.Promise = global.Promise;
+var dbconnection = require('./bin/dbconnection');
+
+var exphbs  = require('express-handlebars');
+var app = express();
+
+// config db
+dbconnection.dbConnect();
 
 
 // view engine setup
