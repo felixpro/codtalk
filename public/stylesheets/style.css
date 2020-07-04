@@ -1,8 +1,28 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-a {
-  color: #00B7FF;
+html,body{
+margin:0px;
+height:100%;
+position: relative;
+}
+
+.flash-message-temp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.flash-message-temp.color {
+  background: red;
+}
+.flash-message-temp p{
+  margin: 0;
 }

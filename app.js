@@ -1,16 +1,20 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+var session = require('express-session');
+var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser')
 mongoose.Promise = global.Promise;
 var dbconnection = require('./bin/dbconnection');
 
 var exphbs  = require('express-handlebars');
 var app = express();
+
 
 // config db
 dbconnection.dbConnect();
@@ -23,12 +27,24 @@ app.engine('.hbs', exphbs({
   extname: '.hbs'
 }))
 
+
 app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+  secret: 'keyboard',
+  resave: true,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
+app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

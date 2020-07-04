@@ -1,6 +1,33 @@
 <h1>Este es el autor del post</h1>
 
 
+
+
+
   {{# each myPost}}
-    <p>{{this.autor}}<p>
+
+  <p>{{this.autor}}<p>
+
   {{/each}}
+
+<a href="/delete/{{postId}}">Eliminar post</a>
+
+<form class="" action="/forms/comment/{{postId}}" method="post">
+  <br>
+  <label for="autor">Autor</label><br>
+  <input type="text" name="autor" value="">
+  <br>
+  <label for="autor">Comment</label> <br>
+  <textarea name="comment" rows="8" cols="80"></textarea>
+  <br>
+  <button type="submit" name="button">submit</button>
+</form>
+
+
+
+
+{{# each comments}}
+  {{# each this}}
+    <p>{{this.text}}<p>
+  {{/each}}
+{{/each}}

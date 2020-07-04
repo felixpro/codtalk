@@ -1,15 +1,22 @@
+
+<!-- {{#if messages}}
+  {{messages}}
+{{/if }} -->
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-3">
 
     </div>
     <div class="col-md-9">
+      <br><br>
+      <a href="/forms/post-form"><button>Crear Nuevo post</button></a>
       {{# each posts}}
-
+        <br><br><br><br>
         {{# each this}}
 
-          <a href="post/{{this._id}}">{{this.title}}</a>
-          <br>
+          <a href="post/{{this._id}}">{{this.autor}}</a>
+
         {{/each}}
       {{/each}}
     </div>
