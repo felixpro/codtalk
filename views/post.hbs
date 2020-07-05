@@ -10,12 +10,12 @@
 
   {{/each}}
 
-<a href="/delete/{{postId}}">Eliminar post</a>
+{{> error }}
 
 <form class="" action="/forms/comment/{{postId}}" method="post">
   <br>
   <label for="autor">Autor</label><br>
-  <input type="text" name="autor" value="">
+  <input type="text" name="comment_autor" value="">
   <br>
   <label for="autor">Comment</label> <br>
   <textarea name="comment" rows="8" cols="80"></textarea>
@@ -24,6 +24,7 @@
 </form>
 
 
+<a href="/delete/{{postId}}">Eliminar post</a>
 
 
 {{# each comments}}

@@ -1,12 +1,8 @@
+
+
 <h1>Creating new post </h1>
 <br>
-<div class="flash-message-temp color" id="color">
-  <p>
-    {{#if messages}}
-      {{messages}}
-    {{/if }}
-  </p>
-</div>
+{{> error }}
 <form  action="/forms/post-form" method="post">
   <label for="autor">Autor</label> <br>
   <input type="text" name="autor" value="">

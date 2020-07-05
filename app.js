@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser')
+var validator = require('express-validator');
 mongoose.Promise = global.Promise;
 var dbconnection = require('./bin/dbconnection');
 
@@ -28,11 +29,14 @@ app.engine('.hbs', exphbs({
 }))
 
 
+
+// midlewares
 app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(validator());
 app.use(session({
   secret: 'keyboard',
   resave: true,
