@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +9,112 @@ margin:0px;
 height:100%;
 position: relative;
 }
+
+ /* header */
+
+.header-partial {
+  padding: 30px 20px;
+  background-image: url('../images/header-partial.jpg');
+}
+
+.navbar-brand  {
+  font-size: 63px !important;
+  font-style: italic;
+  font-weight: 900;
+  font-variant: normal;
+  font-family: DINNextLTPro-Bold, Avenir, Arial;
+  color: rgba(0, 0, 0) !important;
+  /* background-color: rgba(255, 255, 255); */
+  background: #ffffff;
+  padding: 30px !important;
+}
+.header-partial ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10;
+  margin: 0 15px;
+  font-size: 21.3333px;
+  font-style: normal;
+  font-weight: 900;
+  font-variant: normal;
+  font-family: DINNextLTPro-Bold, Avenir, Arial;
+}
+
+.header-partial ul li a {
+  background: #000000;
+  color: #ffff;
+}
+
+.posts-render {
+  padding-top: 100px;
+}
+
+.posts-render .post-seccion {
+  padding-left: 50px;
+}
+.posts-render .year-post{
+font-size: 60px;
+font-style: normal;
+font-weight: 900;
+font-variant: normal;
+font-family: DINNextLTPro-Bold, Avenir, Arial;
+}
+
+.posts-render .content {
+  display: flex;
+  align-items: center;
+}
+
+.posts-render .content a{
+  margin-left: 50px;
+}
+
+.post-seccion p {
+  margin-bottom: 30px;
+}
+
+.post-seccion p a{
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  font-variant: normal;
+  font-family: Inconsolata, \Courier New\, Courier;
+  text-decoration: underline;
+  letter-spacing: 2px;
+}
+
+.post-seccion .time-post{
+  font-size: 19.2px;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  font-family: Inconsolata, \Courier New\, Courier;
+  color: rgba(153, 153, 153);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+
+
+.add-image img {
+  width: 50px;
+  position: absolute;
+  right: 0;
+  top: -125px;
+}
+
+
+
+/* POST */
+
+.tittle-post {
+  
+}
+
+
+
+
+
 
 .flash-message-temp {
   display: flex;

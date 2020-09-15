@@ -15,6 +15,7 @@ router.get('/', function(req, res, next) {
     if (err) {
       console.log("Error when retreving the posts  " + err)
     }
+
     res.render('index', { posts: posts, messages: req.flash('info')});
   })
 });
@@ -29,8 +30,8 @@ router.get('/post/:id', function(req, res, next) {
     })
     .populate('comments')
     .exec(function(err, post) {
-      var postObj = Object.assign({}, post.comments);
-      res.render('post', {myPost: post, postId:post._id, comments: postObj});
+      console.log(post.comments)
+    res.render('post', {myPost: post, postId:post._id, comments: post.comments});
     });
 });
 
@@ -167,6 +168,11 @@ router.get('/comment/redirect', function(req, res) {
   });
 })
 
+// delete comments
+router.get('/delete/comments/:id', function(req, res, next) {
+  var commentId = req.params.id
+  res.send(commentId)
+});
 
 
 

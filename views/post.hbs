@@ -6,11 +6,12 @@
 
   {{# each myPost}}
 
-  <p>{{this.autor}}<p>
+  <p>{{this.title}}<p>
 
   {{/each}}
 
 {{> error }}
+<a href="/delete/{{postId}}">Eliminar post</a>
 
 <form class="" action="/forms/comment/{{postId}}" method="post">
   <br>
@@ -24,7 +25,6 @@
 </form>
 
 
-<a href="/delete/{{postId}}">Eliminar post</a>
 
 
 {{# each comments}}

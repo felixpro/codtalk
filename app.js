@@ -6,7 +6,6 @@ var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser')
 var validator = require('express-validator');
@@ -51,7 +50,6 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

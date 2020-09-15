@@ -1,24 +1,31 @@
+<!-- http://fredkschott.com/post/  -->
+<div class="container posts-render">
 
-<!-- {{#if messages}}
-  {{messages}}
-{{/if }} -->
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-10">
+        <div class="content">
+          <h1 class="year-post">2020</h1>
+          <a href="/forms/post-form" class="add-image"><img src="/images/add.png" alt=""> </a>
+        </div>
 
-    </div>
-    <div class="col-md-9">
-      <br><br>
-      <a href="/forms/post-form"><button>Crear Nuevo post</button></a>
-      {{# each posts}}
-        <br><br><br><br>
-        {{# each this}}
+        <div class="post-seccion">
+          {{# each posts}}
+            {{# each this}}
+            <div class="time-post">
+              {{this.time}}
+            </div>
+            <p class="text">
+              <a href="post/{{this._id}}">{{this.title}}</a>
+            </p>
 
-          <a href="post/{{this._id}}">{{this.autor}}</a>
+            {{/each}}
+          {{/each}}
+        </div>
 
-        {{/each}}
-      {{/each}}
+      </div>
     </div>
   </div>
 </div>
