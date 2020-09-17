@@ -1,19 +1,47 @@
 
 
-<h1>Creating new post </h1>
 <br>
 {{> error }}
 <form  action="/forms/post-form" method="post">
-  <label for="autor">Autor</label> <br>
-  <input type="text" name="autor" value="">
-  <br>
-  <br>
-  <label for="autor">Title</label> <br>
-  <input type="text" name="title" value="">
-  <br>
-  <br>
-  <label for="text">Texto</label> <br>
-  <textarea name="text" rows="8" cols="80"></textarea>
-  <br>
-  <button type="submit" name="button">SUBMIT</button>
+  <div class="container contact">
+  	<div class="row">
+  		<div class="col-md-3">
+  			<div class="contact-info">
+          <div class="image-box">
+            <img src="/images/post.png"alt="image"/>
+          </div>
+  				<h2>Create a post</h2>
+  				<h4>Share new ideas with the community</h4>
+  			</div>
+  		</div>
+  		<div class="col-md-9">
+  			<div class="contact-form">
+  				<div class="form-group">
+  				  <label class="control-label col-sm-2" for="autor">Autor:</label>
+  				  <div class="col-sm-10">
+  					<input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="autor">
+  				  </div>
+  				</div>
+  				<div class="form-group">
+  				  <label class="control-label col-sm-2" for="title">Title:</label>
+  				  <div class="col-sm-10">
+  					<input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="title">
+  				  </div>
+  				</div>
+  				<div class="form-group">
+  				  <label class="control-label col-sm-2" for="text">text:</label>
+  				  <div class="col-sm-10">
+  					<textarea name="text" class="form-control" rows="5" id="comment"></textarea>
+  				  </div>
+  				</div>
+  				<div class="form-group">
+  				  <div class="col-sm-offset-2 col-sm-10">
+  					<button type="submit" class="btn btn-default">Submit</button>
+  				  </div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+
 </form>

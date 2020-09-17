@@ -1,34 +1,71 @@
-<h1>Este es el autor del post</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+
+    </div>
+    <div class="col-md-10">
+
+        {{# each myPost}}
+
+        <h2 class="post-title">{{this.title}}</h2>
+        <p class="post-date"> {{this.time}} </p>
+        <p class="post-text"> {{this.text}}</p>
+
+        {{/each}}
+
+          {{> error }}
+
+          <button type="button" class="btn btn-outline-secondary"> <a href="/delete/{{postId}}" class="delete-post" >Eliminar post</a>
+</button>
+
+
+        <form class="" action="/forms/comment/{{postId}}"  id="contact" method="post">
+          <fieldset>
+            <input name="comment_autor" placeholder="Name" type="text" tabindex="4" required>
+          </fieldset>
+          <fieldset>
+            <textarea name="comment" placeholder="Type your comment here...." tabindex="5" required></textarea>
+          </fieldset>
+          <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Posting">POST</button>
+          </fieldset>
+
+        </form>
 
 
 
 
 
-  {{# each myPost}}
-
-  <p>{{this.title}}<p>
-
-  {{/each}}
-
-{{> error }}
-<a href="/delete/{{postId}}">Eliminar post</a>
-
-<form class="" action="/forms/comment/{{postId}}" method="post">
-  <br>
-  <label for="autor">Autor</label><br>
-  <input type="text" name="comment_autor" value="">
-  <br>
-  <label for="autor">Comment</label> <br>
-  <textarea name="comment" rows="8" cols="80"></textarea>
-  <br>
-  <button type="submit" name="button">submit</button>
-</form>
 
 
+      {{# each comments}}
+      <div class="card card-inner">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+                        </div>
+                        <div class="col-md-10">
+                            <p><a href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>
+                              {{# each this}}
+                                <p>{{this.autor}}<p>
+                              {{/each}}
+                            </strong></a></p>
+                            {{# each this}}
+                              <p>{{this.text}}<p>
+                            {{/each}}
+                            <p>
+                                <a class="float-right btn btn-outline-primary ml-2">  <i class="fa fa-reply"></i> Reply</a>
+                                <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
+                           </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+      {{/each}}
 
-{{# each comments}}
-  {{# each this}}
-    <p>{{this.text}}<p>
-  {{/each}}
-{{/each}}
+    </div>
+  </div>
+</div>

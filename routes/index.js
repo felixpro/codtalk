@@ -23,17 +23,20 @@ router.get('/', function(req, res, next) {
 
 router.get('/post/:id', function(req, res, next) {
     var postId = req.params.id;
+    var loro =
     Post.findOne({_id: postId}, function(err, post) {
       if (err) {
         console.log("Error when retreving the posts  " + err)
       }
     })
-    .populate('comments')
+    .populate('comments').sort()
     .exec(function(err, post) {
-      console.log(post.comments)
     res.render('post', {myPost: post, postId:post._id, comments: post.comments});
     });
 });
+
+
+
 
 router.get('/delete/:id', function (req, res) {
   var postId = req.params.id;
@@ -58,14 +61,14 @@ router.get('/forms/post-form', function(req, res, next) {
 router.post('/forms/post-form', function(req, res, next) {
     // Validation
     req.checkBody('autor')
-    .notEmpty().withMessage('Autor is empty')
-    .isLength({ max: 30 }).withMessage('Autor must be less than 30 chars long')
+    .notEmpty().withMessage('Autor is empty ')
+    .isLength({ max: 30 }).withMessage('Autor must be less than 30 chars long ')
     req.checkBody('title')
-    .notEmpty().withMessage('Title is empty')
-    .isLength({ max:80 }).withMessage('Title must be less than 80 chars long')
+    .notEmpty().withMessage('Title is empty ')
+    .isLength({ max:80 }).withMessage('Title must be less than 80 chars long ')
     req.checkBody('text')
-    .notEmpty().withMessage('Post text is empty')
-    .isLength({ min:100}).withMessage('Text must contain more than 80 chars')
+    .notEmpty().withMessage('Post text is empty ')
+    .isLength({ min:100}).withMessage('Text must contain more than 80 chars ')
 
     var errors = req.validationErrors();
     if (errors) {
@@ -105,7 +108,7 @@ router.post('/forms/comment/:id', function(req, res, next) {
   var postId = req.params.id;
 
   req.checkBody('comment_autor')
-  .notEmpty().withMessage('Autor is empty')
+  .notEmpty().withMessage('Autor is empty ')
   .isLength({ max: 30 }).withMessage('Autor must be less than 30 chars long')
   req.checkBody('comment')
   .notEmpty().withMessage('Post text is empty')
@@ -151,7 +154,7 @@ router.post('/forms/comment/:id', function(req, res, next) {
 
 // As redirect doesnt allow parameters, I redirected to this route and after that render the post view
 router.get('/comment/redirect', function(req, res) {
-  var messages = req.query.messagesObj;
+  var messages = req.query.messagesObj
   var postId = req.query.postId;
 
   console.log(postId)
@@ -163,7 +166,7 @@ router.get('/comment/redirect', function(req, res) {
   })
   .populate('comments')
   .exec(function(err, post) {
-    var postObj = Object.assign({}, post.comments);
+    var postObj = Object.assign({}, post.comments)
     res.render('post', {myPost: post, postId:post._id, comments: postObj, messages:messages });
   });
 })
