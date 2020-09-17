@@ -10,6 +10,12 @@ height:100%;
 position: relative;
 }
 
+@font-face {
+  font-family: Avenir;
+  src: url("/avenir/Metropolis-Bold.otf");
+
+}
+
 
 
  /* header */
@@ -74,14 +80,15 @@ font-family: DINNextLTPro-Bold, Avenir, Arial;
 
 .post-seccion p {
   margin-bottom: 30px;
+
 }
 
 .post-seccion p a{
   font-size: 24px;
   font-style: normal;
-  font-weight: 900;
+  font-weight: 600;
   font-variant: normal;
-  font-family: Inconsolata, \Courier New\, Courier;
+  font-family: 'Inconsolata', monospace;
   text-decoration: underline;
   letter-spacing: 2px;
 }
@@ -91,7 +98,7 @@ font-family: DINNextLTPro-Bold, Avenir, Arial;
   font-style: normal;
   font-weight: 400;
   font-variant: normal;
-  font-family: Inconsolata, \Courier New\, Courier;
+  font-family: Inconsolata;
   color: rgba(153, 153, 153);
   background-color: rgba(0, 0, 0, 0);
 }
@@ -153,12 +160,16 @@ font-family: DINNextLTPro-Bold, Avenir, Arial;
   font-style: normal;
   font-weight: 400;
   font-variant: normal;
-  font-family: Inconsolata, \Courier New\, Courier;
+  font-family: 'Inconsolata', monospace;
   color: rgba(153, 153, 153);
   background-color: rgba(0, 0, 0, 0);
   margin-top: 50px;
 }
 
+.post-text {
+  font-family: 'Inconsolata', monospace;
+      line-height: 1.6;
+}
 
 
 body{ background: #fafafa;}
