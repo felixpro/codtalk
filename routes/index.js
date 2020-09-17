@@ -83,7 +83,9 @@ router.post('/forms/post-form', function(req, res, next) {
           autor: req.body.autor,
           title: req.body.title,
           text: req.body.text,
-          comments: []
+          comments: [],
+          time : String(new Date().toISOString().replace('-', '/').split('T')[0].replace('-', '/'))
+
       }).save(function(err) {
         if (err) {
           console.log("Error when adding new post to the dbs")
