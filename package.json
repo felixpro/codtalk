@@ -18,7 +18,7 @@
     "express-validator": "^2.20.5",
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
-    "mongoose": "^5.9.20",
+    "mongoose": "^5.13.15",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.4"
   }
